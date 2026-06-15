@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GHOST — Developer · Translator · Security Enthusiast</title>
+<meta name="description" content="Portfolio of Ghost — a self-taught developer, translator, and security enthusiast from Bosnia &amp; Herzegovina. Premium web builds, security tooling, and localizations used by hundreds of thousands.">
+<meta name="theme-color" content="#07060a">
+<meta property="og:title" content="GHOST — Portfolio">
+<meta property="og:description" content="Build things. Break things. Ship fast. Stay curious.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070609'/%3E%3Cg stroke='%23a855f7' stroke-width='6' stroke-linecap='round'%3E%3Cpath d='M32 12v40M12 32h40M18 18l28 28M46 18 18 46'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<noscript><style>.preloader{display:none!important}</style></noscript>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ====== PRELOADER ====== -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pre-inner">
+    <div class="pre-word" id="preWord">INITIALIZING GHOST</div>
+    <div class="pre-count"><span id="preCount">0</span><i>%</i></div>
+    <div class="pre-bar"><span id="preBar"></span></div>
+  </div>
+</div>
+
+<!-- ====== FIXED ATMOSPHERE LAYERS ====== -->
+<div class="blobs" aria-hidden="true">
+  <div class="blob blob-a"></div>
+  <div class="blob blob-b"></div>
+  <div class="blob blob-c"></div>
+</div>
+<div class="grid-lines" aria-hidden="true"></div>
+<canvas id="webgl" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ====== HEADER ====== -->
+<header class="site-head" id="siteHead">
+  <a class="logo" href="#hero" data-nav><span class="logo-mark">&#10035;&#xFE0E;</span>GHOST<sup>v2</sup></a>
+  <nav class="site-nav" aria-label="Sections">
+    <a href="#about" data-nav>Profile</a>
+    <a href="#experience" data-nav>Path</a>
+    <a href="#skills" data-nav>Skills</a>
+    <a href="#work" data-nav>Work</a>
+    <a href="#opensource" data-nav>Open Source</a>
+    <a href="#contact" data-nav>Contact</a>
+  </nav>
+  <div class="status"><span class="status-dot"></span>AVAILABLE</div>
+</header>
+
+<main id="main">
+
+  <!-- ====== 00 / HERO ====== -->
+  <section class="hero" id="hero" data-accent="#a855f7">
+    <div class="bg-word bg-word-a" data-speed="1.3" aria-hidden="true">BUILD</div>
+    <div class="bg-word bg-word-b" data-speed="0.72" aria-hidden="true">BREAK</div>
+
+    <div class="hero-inner">
+      <p class="kicker" data-intro>Portfolio — Developer · Translator · Security</p>
+      <h1 class="hero-title">
+        <span class="line accent" data-split>GHOST</span>
+        <span class="line" data-split>PRODUCTIONS</span>
+      </h1>
+      <p class="hero-sub" data-intro>Self-taught developer, translator, and security enthusiast from
+        Bosnia&nbsp;&amp;&nbsp;Herzegovina. I build premium web experiences, ship tools that actually
+        work, and localize software used by hundreds of thousands.</p>
+      <div class="hero-cta" data-intro>
+        <a class="btn btn-solid magnetic" href="#work" data-nav>View the work <span class="arr">&darr;</span></a>
+        <a class="btn btn-ghost magnetic" href="#contact" data-nav>Get in touch</a>
+      </div>
+    </div>
+
+    <div class="hero-meta hero-meta-l" data-intro>BASED IN BOSNIA &amp; HERZEGOVINA</div>
+    <div class="hero-meta hero-meta-r" data-intro>GHOST PRODUCTIONS — SINCE DAY ONE</div>
+    <div class="scroll-cue" data-intro><span class="cue-line"></span>scroll to explore</div>
+  </section>
+
+  <!-- ====== MARQUEE I ====== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-inner">
+        <span>Web Development</span><i>&#10038;</i><span>Security Tooling</span><i>&#10038;</i><span>Localization</span><i>&#10038;</i>
+        <span>Full-Stack</span><i>&#10038;</i><span>React</span><i>&#10038;</i><span>Python</span><i>&#10038;</i><span>Custom Software</span><i>&#10038;</i>
+      </div>
+      <div class="marquee-inner" aria-hidden="true">
+        <span>Web Development</span><i>&#10038;</i><span>Security Tooling</span><i>&#10038;</i><span>Localization</span><i>&#10038;</i>
+        <span>Full-Stack</span><i>&#10038;</i><span>React</span><i>&#10038;</i><span>Python</span><i>&#10038;</i><span>Custom Software</span><i>&#10038;</i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== 01 / PROFILE ====== -->
+  <section class="section about" id="about" data-accent="#22d3ee">
+    <div class="sec-inner">
+      <div class="sec-head">
+        <p class="kicker" data-reveal>01 — Profile</p>
+        <h2 class="sec-title" data-split data-sr>Who is Ghost?</h2>
+        <span class="sec-rule"></span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy" data-reveal>
+          <p class="lede">I'm a self-taught developer and translator who got hooked on computers early —
+            starting with game cheats and grey-hat curiosity, and growing into someone who ships real
+            products.</p>
+          <p>Today I work across the full stack: React frontends, Python backends, security tooling,
+            and everything in between. I've shipped localization work for tools used by hundreds of
+            thousands of people, and built custom software for clients who needed something that didn't
+            exist yet.</p>
+          <p class="quote-line">&ldquo;Don't let morals get in the way of your goals. If you have a
+            revolutionary idea, go for it.&rdquo;</p>
+        </div>
+        <ul class="about-facts" data-reveal>
+          <li><span>Alias</span><b>Ghost</b></li>
+          <li><span>Studio</span><b>Ghost Productions</b></li>
+          <li><span>Based in</span><b>Bosnia &amp; Herzegovina</b></li>
+          <li><span>Focus</span><b>Web · Security · Localization</b></li>
+          <li><span>Status</span><b>Available for work</b></li>
+        </ul>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat" data-reveal>
+          <div class="stat-num"><span data-count="12">0</span><i>+</i></div>
+          <p>projects shipped — web apps, tools, and landing pages that went live.</p>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="stat-num"><span data-count="100000" data-format="compact">0</span><i>+</i></div>
+          <p>people reached by software I've helped localize into Croatian.</p>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="stat-num"><span data-count="4">0</span><i></i></div>
+          <p>open-source localizations across desktop, Android, and the web.</p>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="stat-num"><span data-count="15">0</span><i>+</i></div>
+          <p>technologies in active rotation — front to back to the network layer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 02 / PATH ====== -->
+  <section class="section experience" id="experience" data-accent="#818cf8">
+    <div class="sec-inner">
+      <div class="sec-head">
+        <p class="kicker" data-reveal>02 — The Path</p>
+        <h2 class="sec-title" data-split data-sr>How I got here</h2>
+        <span class="sec-rule"></span>
+      </div>
+
+      <div class="tl">
+        <article class="tl-item" data-reveal>
+          <div class="tl-year">Present</div>
+          <h3 class="tl-role">Founder &amp; Full-Stack Developer</h3>
+          <div class="tl-org">Ghost Productions</div>
+          <p class="tl-desc">Designing and building web products end to end — React frontends, Node and
+            Python backends, and custom software for clients who needed something that didn't exist yet.</p>
+        </article>
+        <article class="tl-item" data-reveal>
+          <div class="tl-year">Ongoing</div>
+          <h3 class="tl-role">Open-Source Localizer</h3>
+          <div class="tl-org">Crowdin · The Community</div>
+          <p class="tl-desc">Croatian localizations for FishingBot, Canta, OSForensics, and CurseForge —
+            translation work riding in tools used by hundreds of thousands of people worldwide.</p>
+        </article>
+        <article class="tl-item" data-reveal>
+          <div class="tl-year">Self-Directed</div>
+          <h3 class="tl-role">Security Enthusiast</h3>
+          <div class="tl-org">Burp · Wireshark · Metasploit · Nmap</div>
+          <p class="tl-desc">Web-app testing, packet analysis, and reconnaissance — the grey-hat curiosity
+            from childhood, pointed at understanding how systems really break and hold.</p>
+        </article>
+        <article class="tl-item" data-reveal>
+          <div class="tl-year">The Origin</div>
+          <h3 class="tl-role">Curious Kid</h3>
+          <div class="tl-org">Games &amp; Grey-Hat</div>
+          <p class="tl-desc">It started with game cheats and a need to know <em>how things work</em>.
+            I never grew out of the question — I just got better tools to answer it.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== MARQUEE II ====== -->
+  <div class="marquee marquee-rev" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-inner">
+        <span>Build things</span><i>&#10038;</i><span>Break things</span><i>&#10038;</i><span>Ship fast</span><i>&#10038;</i>
+        <span>Stay curious</span><i>&#10038;</i><span>Hundreds of thousands reached</span><i>&#10038;</i>
+      </div>
+      <div class="marquee-inner" aria-hidden="true">
+        <span>Build things</span><i>&#10038;</i><span>Break things</span><i>&#10038;</i><span>Ship fast</span><i>&#10038;</i>
+        <span>Stay curious</span><i>&#10038;</i><span>Hundreds of thousands reached</span><i>&#10038;</i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== 03 / SKILLS ====== -->
+  <section class="section skills" id="skills" data-accent="#c084fc">
+    <div class="sec-inner">
+      <div class="sec-head">
+        <p class="kicker" data-reveal>03 — Skills</p>
+        <h2 class="sec-title" data-split data-sr>What I work with</h2>
+        <span class="sec-rule"></span>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skills-bars">
+          <div class="skill" data-reveal>
+            <div class="skill-top"><span>Frontend — React &amp; JavaScript</span><span class="skill-pct"><span data-count="92">0</span>%</span></div>
+            <div class="rail"><div class="fill" data-level="92" style="--lvl:92%"></div></div>
+          </div>
+          <div class="skill" data-reveal>
+            <div class="skill-top"><span>Localization — HR &#8644; EN</span><span class="skill-pct"><span data-count="96">0</span>%</span></div>
+            <div class="rail"><div class="fill" data-level="96" style="--lvl:96%"></div></div>
+          </div>
+          <div class="skill" data-reveal>
+            <div class="skill-top"><span>Backend — Node, Python &amp; PHP</span><span class="skill-pct"><span data-count="84">0</span>%</span></div>
+            <div class="rail"><div class="fill" data-level="84" style="--lvl:84%"></div></div>
+          </div>
+          <div class="skill" data-reveal>
+            <div class="skill-top"><span>UI &amp; motion design</span><span class="skill-pct"><span data-count="88">0</span>%</span></div>
+            <div class="rail"><div class="fill" data-level="88" style="--lvl:88%"></div></div>
+          </div>
+          <div class="skill" data-reveal>
+            <div class="skill-top"><span>Security tooling &amp; recon</span><span class="skill-pct"><span data-count="78">0</span>%</span></div>
+            <div class="rail"><div class="fill" data-level="78" style="--lvl:78%"></div></div>
+          </div>
+          <div class="skill" data-reveal>
+            <div class="skill-top"><span>Shipping under pressure</span><span class="skill-pct"><span data-count="90">0</span>%</span></div>
+            <div class="rail"><div class="fill" data-level="90" style="--lvl:90%"></div></div>
+          </div>
+          <p class="skills-note" data-reveal>* Self-taught across every row. The internet was the syllabus.</p>
+        </div>
+
+        <div class="skills-stack" data-reveal>
+          <p class="chips-label">The toolkit</p>
+          <div class="tile-grid">
+            <div class="tile" data-brand="React"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" loading="lazy"><span>React</span></div>
+            <div class="tile" data-brand="JavaScript"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" loading="lazy"><span>JavaScript</span></div>
+            <div class="tile" data-brand="HTML5"><img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" loading="lazy"><span>HTML5</span></div>
+            <div class="tile" data-brand="CSS3"><img src="https://cdn.simpleicons.org/css/1572B6" alt="CSS" loading="lazy"><span>CSS3</span></div>
+            <div class="tile" data-brand="Tailwind"><img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" loading="lazy"><span>Tailwind</span></div>
+            <div class="tile" data-brand="Vite"><img src="https://cdn.simpleicons.org/vite/646CFF" alt="Vite" loading="lazy"><span>Vite</span></div>
+            <div class="tile" data-brand="Node.js"><img src="https://cdn.simpleicons.org/nodedotjs/5FA04E" alt="Node.js" loading="lazy"><span>Node.js</span></div>
+            <div class="tile" data-brand="Python"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" loading="lazy"><span>Python</span></div>
+            <div class="tile" data-brand="PHP"><img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP" loading="lazy"><span>PHP</span></div>
+            <div class="tile" data-brand="MySQL"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt="SQL / MySQL" loading="lazy"><span>SQL</span></div>
+            <div class="tile" data-brand="Firebase"><img src="https://cdn.simpleicons.org/firebase/FFCA28" alt="Firebase" loading="lazy"><span>Firebase</span></div>
+            <div class="tile" data-brand="Docker"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" loading="lazy"><span>Docker</span></div>
+            <div class="tile" data-brand="Burp Suite"><img src="https://cdn.simpleicons.org/burpsuite/FF6633" alt="Burp Suite" loading="lazy"><span>Burp Suite</span></div>
+            <div class="tile" data-brand="Wireshark"><img src="https://cdn.simpleicons.org/wireshark/1679A7" alt="Wireshark" loading="lazy"><span>Wireshark</span></div>
+            <div class="tile" data-brand="Metasploit"><img src="https://cdn.simpleicons.org/metasploit/2596CD" alt="Metasploit" loading="lazy"><span>Metasploit</span></div>
+            <div class="tile tile-img" data-brand="Nmap"><img src="img/nmap.png" alt="Nmap" loading="lazy"><span>Nmap</span></div>
+          </div>
+          <div class="chips">
+            <span class="chip">Express</span><span class="chip">MongoDB</span><span class="chip">Git</span>
+            <span class="chip">Crowdin</span><span class="chip">CustomTkinter</span><span class="chip">REST APIs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 04 / WORK ====== -->
+  <section class="section work" id="work" data-accent="#f472b6">
+    <div class="sec-inner">
+      <div class="sec-head">
+        <p class="kicker" data-reveal>04 — Work</p>
+        <h2 class="sec-title" data-split data-sr>Selected projects</h2>
+        <span class="sec-rule"></span>
+      </div>
+
+      <div class="work-grid">
+        <article class="card work-card" data-tilt data-reveal>
+          <div class="card-media"><img src="img/luckycrypter.png" alt="Lucky Crypter screenshot" loading="lazy"><span class="card-num">001</span></div>
+          <div class="card-body">
+            <div class="card-tags"><span>React</span><span>Vite</span><span>Tailwind</span></div>
+            <h3>Lucky Crypter</h3>
+            <p>A web-based crypter for Windows applications — designed by Ghost, managed by Lucky. Clean
+              dashboard, real workflow.</p>
+            <a class="card-link" href="https://luckycrypter.netlify.app" target="_blank" rel="noopener">View live <span class="arr-ne">&nearr;</span></a>
+          </div>
+        </article>
+
+        <article class="card work-card" data-tilt data-reveal>
+          <div class="card-media"><img src="img/kkviz.png" alt="Kreševo Kviz screenshot" loading="lazy"><span class="card-num">002</span></div>
+          <div class="card-body">
+            <div class="card-tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
+            <h3>Kreševo Kviz</h3>
+            <p>A full-stack quiz platform for the city of Kreševo, built end to end by Ghost Productions —
+              Express API, MongoDB, React front.</p>
+            <a class="card-link" href="https://kresevoquiz.vercel.app/" target="_blank" rel="noopener">View live <span class="arr-ne">&nearr;</span></a>
+          </div>
+        </article>
+
+        <article class="card work-card" data-tilt data-reveal>
+          <div class="card-media"><img src="img/redline.png" alt="Redline Log Searcher screenshot" loading="lazy"><span class="card-num">003</span></div>
+          <div class="card-body">
+            <div class="card-tags"><span>Python</span><span>CustomTkinter</span></div>
+            <h3>Redline Log Searcher</h3>
+            <p>A desktop tool to search specific data out of Redline Stealer log folders — fast triage for
+              security research.</p>
+            <a class="card-link" href="https://github.com/nugeta/Ghosts-Log-Checker" target="_blank" rel="noopener">Source on GitHub <span class="arr-ne">&nearr;</span></a>
+          </div>
+        </article>
+
+        <article class="card work-card" data-tilt data-reveal>
+          <div class="card-media"><img src="img/cyberquiz.png" alt="Cybersecurity Quiz screenshot" loading="lazy"><span class="card-num">004</span></div>
+          <div class="card-body">
+            <div class="card-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <h3>Cybersecurity Quiz</h3>
+            <p>A clean, Croatian-language quiz about cybersecurity fundamentals — built to make the basics
+              actually stick.</p>
+            <a class="card-link" href="https://github.com/nugeta/cyberquiz" target="_blank" rel="noopener">Source on GitHub <span class="arr-ne">&nearr;</span></a>
+          </div>
+        </article>
+
+        <article class="card work-card" data-tilt data-reveal>
+          <div class="card-media"><img src="img/selfbot.png" alt="Ghost Selfbot screenshot" loading="lazy"><span class="card-num">005</span></div>
+          <div class="card-body">
+            <div class="card-tags"><span>Python</span><span>discord.py-self</span></div>
+            <h3>Ghost Selfbot</h3>
+            <p>A Discord selfbot at 3,000+ lines. Discontinued once Discord shipped the same features
+              natively — a good run while it lasted.</p>
+            <span class="card-note">Discontinued — contact for details</span>
+          </div>
+        </article>
+
+        <article class="card work-card" data-tilt data-reveal>
+          <div class="card-media"><img src="img/BlueOne.png" alt="BlueOne screenshot" loading="lazy"><span class="card-num">006</span></div>
+          <div class="card-body">
+            <div class="card-tags"><span>React</span><span>Vite</span><span>Tailwind</span></div>
+            <h3>BlueOne</h3>
+            <p>Marketing site for the BlueOne remote-access tool — built alongside Java and Lucky, with a
+              dark, product-first feel.</p>
+            <span class="card-note">Discontinued</span>
+          </div>
+        </article>
+
+        <article class="card work-card" data-tilt data-reveal>
+          <div class="card-media"><img src="img/LuckyIndustries.png" alt="Lucky Industries screenshot" loading="lazy"><span class="card-num">007</span></div>
+          <div class="card-body">
+            <div class="card-tags"><span>React</span><span>Vite</span><span>Tailwind</span></div>
+            <h3>Lucky Industries</h3>
+            <p>A landing page for the Lucky Industries project — motion-driven, conversion-minded, shipped
+              to spec.</p>
+            <span class="card-note">Discontinued</span>
+          </div>
+        </article>
+
+        <article class="card work-card" data-tilt data-reveal>
+          <div class="card-media"><img src="img/gifcdn.png" alt="Ghost's GIF CDN screenshot" loading="lazy"><span class="card-num">008</span></div>
+          <div class="card-body">
+            <div class="card-tags"><span>PHP</span></div>
+            <h3>Ghost's GIF CDN</h3>
+            <p>A content-delivery network for GIFs and other file types, written in PHP. Discontinued, but
+              it served its purpose.</p>
+            <span class="card-note">Discontinued</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 05 / OPEN SOURCE ====== -->
+  <section class="section opensource" id="opensource" data-accent="#2dd4bf">
+    <div class="sec-inner">
+      <div class="sec-head">
+        <p class="kicker" data-reveal>05 — Open Source</p>
+        <h2 class="sec-title" data-split data-sr>Localizations</h2>
+        <span class="sec-rule"></span>
+      </div>
+
+      <div class="oss-grid">
+        <a class="card oss-card" data-tilt data-reveal href="https://github.com/MrKinau/FishingBot/releases/tag/v2.13.3" target="_blank" rel="noopener">
+          <div class="oss-icon"><img src="img/fishingbot.png" alt="FishingBot" loading="lazy"></div>
+          <div class="oss-body">
+            <h3>FishingBot</h3>
+            <p>Croatian localization for the popular Minecraft AFK fishing &amp; server-keepalive bot.</p>
+            <div class="card-tags"><span>Crowdin</span></div>
+          </div>
+          <span class="oss-go" aria-hidden="true">&nearr;</span>
+        </a>
+
+        <a class="card oss-card" data-tilt data-reveal href="https://github.com/samolego/Canta/" target="_blank" rel="noopener">
+          <div class="oss-icon"><img src="img/canta.png" alt="Canta" loading="lazy"></div>
+          <div class="oss-body">
+            <h3>Canta</h3>
+            <p>Partial Croatian translation of the Shizuku-powered Android bulk uninstaller.</p>
+            <div class="card-tags"><span>Crowdin</span></div>
+          </div>
+          <span class="oss-go" aria-hidden="true">&nearr;</span>
+        </a>
+
+        <a class="card oss-card" data-tilt data-reveal href="https://www.osforensics.com/" target="_blank" rel="noopener">
+          <div class="oss-icon"><img src="img/osf.png" alt="OSForensics" loading="lazy"></div>
+          <div class="oss-body">
+            <h3>OSForensics</h3>
+            <p>Croatian localization for the entry-level digital-forensics toolkit for first responders.</p>
+            <div class="card-tags"><span>Crowdin</span></div>
+          </div>
+          <span class="oss-go" aria-hidden="true">&nearr;</span>
+        </a>
+
+        <a class="card oss-card" data-tilt data-reveal href="https://blog.curseforge.com/curseforge-app-release-notes-1-271/" target="_blank" rel="noopener">
+          <div class="oss-icon"><img src="img/cf.png" alt="CurseForge" loading="lazy"></div>
+          <div class="oss-body">
+            <h3>CurseForge</h3>
+            <p>Croatian translation of the CurseForge Minecraft modding platform and desktop app.</p>
+            <div class="card-tags"><span>JSON</span></div>
+          </div>
+          <span class="oss-go" aria-hidden="true">&nearr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 06 / CONTACT ====== -->
+  <section class="section contact" id="contact" data-accent="#5dff9f">
+    <div class="sec-inner">
+      <p class="kicker" data-reveal>06 — Contact</p>
+      <h2 class="contact-title" data-split data-sr>Let's build something.</h2>
+      <p class="contact-sub" data-reveal>Got a project in mind, want to collaborate, or just want to say hi?
+        Reach out on any of these — I read everything.</p>
+
+      <div class="terminal" data-reveal>
+        <div class="term-head"><i class="td td-r"></i><i class="td td-y"></i><i class="td td-g"></i><span>ghost@productions: ~/contact</span></div>
+        <div class="term-body" id="termBody"></div>
+      </div>
+
+      <div class="contact-links" data-reveal>
+        <a class="contact-link" href="https://instagram.com/gustigost" target="_blank" rel="noopener">
+          <span class="cl-ic cl-ig"><img src="https://cdn.simpleicons.org/instagram/FFFFFF" alt=""></span>
+          <span class="cl-text"><b>Instagram</b><i>@gustigost</i></span>
+          <span class="cl-go" aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="contact-link" href="https://fakecrime.bio/gusti" target="_blank" rel="noopener">
+          <span class="cl-ic cl-fc"><img src="img/bolt.png" alt=""></span>
+          <span class="cl-text"><b>Fakecrime</b><i>@gusti</i></span>
+          <span class="cl-go" aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="contact-link" href="mailto:ghostprodltd@gmail.com">
+          <span class="cl-ic cl-mail"><img src="https://cdn.simpleicons.org/gmail/FFFFFF" alt=""></span>
+          <span class="cl-text"><b>Email</b><i>ghostprodltd@gmail.com</i></span>
+          <span class="cl-go" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+
+      <div class="contact-cta" data-reveal>
+        <button class="btn btn-solid magnetic" id="copyBtn" type="button">Copy my email</button>
+        <a class="btn btn-ghost magnetic" href="mailto:ghostprodltd@gmail.com">or open your mail client &nearr;</a>
+      </div>
+      <p class="contact-fine" data-reveal>Usually replies faster than you'd expect.</p>
+    </div>
+  </section>
+</main>
+
+<!-- ====== FOOTER ====== -->
+<footer class="site-foot">
+  <div class="foot-row">
+    <div>© 2026 GHOST PRODUCTIONS — DESIGNED &amp; BUILT BY GHOST.</div>
+    <a href="#hero" data-nav><span class="status-dot"></span>BACK TO TOP &uarr;</a>
+  </div>
+  <div class="foot-fine">BUILD THINGS. BREAK THINGS. SHIP FAST. STAY CURIOUS.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
