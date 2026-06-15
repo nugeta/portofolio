@@ -9,9 +9,11 @@
 <meta property="og:title" content="GHOST — Portfolio">
 <meta property="og:description" content="Build things. Break things. Ship fast. Stay curious.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="/og-image.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070609'/%3E%3Cg stroke='%23a855f7' stroke-width='6' stroke-linecap='round'%3E%3Cpath d='M32 12v40M12 32h40M18 18l28 28M46 18 18 46'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.simpleicons.org">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <noscript><style>.preloader{display:none!important}</style></noscript>
@@ -47,8 +49,8 @@
 
 <!-- ====== HEADER ====== -->
 <header class="site-head" id="siteHead">
-  <a class="logo" href="#hero" data-nav><span class="logo-mark">&#10035;&#xFE0E;</span>GHOST<sup>v2</sup></a>
-  <nav class="site-nav" aria-label="Sections">
+  <a class="logo" href="#hero" data-nav><span class="logo-mark">&#10035;&#xFE0E;</span>GHOST</a>
+  <nav class="site-nav" id="siteNav" aria-label="Sections">
     <a href="#about" data-nav>Profile</a>
     <a href="#experience" data-nav>Path</a>
     <a href="#skills" data-nav>Skills</a>
@@ -57,28 +59,31 @@
     <a href="#contact" data-nav>Contact</a>
   </nav>
   <div class="status"><span class="status-dot"></span>AVAILABLE</div>
+  <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
 </header>
 
-<main id="main">
+<main id="main" tabindex="-1">
 
   <!-- ====== 00 / HERO ====== -->
   <section class="hero" id="hero" data-accent="#a855f7">
-    <div class="bg-word bg-word-a" data-speed="1.3" aria-hidden="true">BUILD</div>
-    <div class="bg-word bg-word-b" data-speed="0.72" aria-hidden="true">BREAK</div>
+    <div class="bg-word bg-word-a" data-speed="1.3" aria-hidden="true">HAUNT</div>
+    <div class="bg-word bg-word-b" data-speed="0.72" aria-hidden="true">CRAFT</div>
 
     <div class="hero-inner">
-      <p class="kicker" data-intro>Portfolio — Developer · Translator · Security</p>
+      <p class="kicker" data-intro>Developer · Malware Analyzer · Cybersecurity Advisor</p>
       <h1 class="hero-title">
         <span class="line accent" data-split>GHOST</span>
         <span class="line" data-split>PRODUCTIONS</span>
       </h1>
-      <p class="hero-sub" data-intro>Self-taught developer, translator, and security enthusiast from
-        Bosnia&nbsp;&amp;&nbsp;Herzegovina. I build premium web experiences, ship tools that actually
-        work, and localize software used by hundreds of thousands.</p>
+      <p class="hero-sub" data-intro>Self-taught developer, malware analyst, and cybersecurity advisor from
+        Bosnia&nbsp;&amp;&nbsp;Herzegovina. I build premium web experiences, reverse engineer what others ship,
+        and secure what clients can't afford to lose.</p>
       <div class="hero-cta" data-intro>
         <a class="btn btn-solid magnetic" href="#work" data-nav>View the work <span class="arr">&darr;</span></a>
-        <a class="btn btn-ghost magnetic" href="#contact" data-nav>Get in touch</a>
       </div>
+      <p class="hero-nudge" data-intro>or <a href="#contact" data-nav>get in touch &rarr;</a></p>
     </div>
 
     <div class="hero-meta hero-meta-l" data-intro>BASED IN BOSNIA &amp; HERZEGOVINA</div>
@@ -118,8 +123,7 @@
             and everything in between. I've shipped localization work for tools used by hundreds of
             thousands of people, and built custom software for clients who needed something that didn't
             exist yet.</p>
-          <p class="quote-line">&ldquo;Don't let morals get in the way of your goals. If you have a
-            revolutionary idea, go for it.&rdquo;</p>
+          <p class="quote-line">&ldquo;Build things. Break things. Understand how it all holds together.&rdquo;</p>
         </div>
         <ul class="about-facts" data-reveal>
           <li><span>Alias</span><b>Ghost</b></li>
@@ -219,27 +223,27 @@
       <div class="skills-grid">
         <div class="skills-bars">
           <div class="skill" data-reveal>
-            <div class="skill-top"><span>Frontend — React &amp; JavaScript</span><span class="skill-pct"><span data-count="92">0</span>%</span></div>
+            <div class="skill-top"><span>Frontend — React &amp; JavaScript</span><span class="skill-badge">Primary</span></div>
             <div class="rail"><div class="fill" data-level="92" style="--lvl:92%"></div></div>
           </div>
           <div class="skill" data-reveal>
-            <div class="skill-top"><span>Localization — HR &#8644; EN</span><span class="skill-pct"><span data-count="96">0</span>%</span></div>
+            <div class="skill-top"><span>Localization — HR &#8644; EN</span><span class="skill-badge">Expert</span></div>
             <div class="rail"><div class="fill" data-level="96" style="--lvl:96%"></div></div>
           </div>
           <div class="skill" data-reveal>
-            <div class="skill-top"><span>Backend — Node, Python &amp; PHP</span><span class="skill-pct"><span data-count="84">0</span>%</span></div>
+            <div class="skill-top"><span>Backend — Node, Python &amp; PHP</span><span class="skill-badge">Confident</span></div>
             <div class="rail"><div class="fill" data-level="84" style="--lvl:84%"></div></div>
           </div>
           <div class="skill" data-reveal>
-            <div class="skill-top"><span>UI &amp; motion design</span><span class="skill-pct"><span data-count="88">0</span>%</span></div>
+            <div class="skill-top"><span>UI &amp; motion design</span><span class="skill-badge">Strong</span></div>
             <div class="rail"><div class="fill" data-level="88" style="--lvl:88%"></div></div>
           </div>
           <div class="skill" data-reveal>
-            <div class="skill-top"><span>Security tooling &amp; recon</span><span class="skill-pct"><span data-count="78">0</span>%</span></div>
+            <div class="skill-top"><span>Security tooling &amp; recon</span><span class="skill-badge">Practitioner</span></div>
             <div class="rail"><div class="fill" data-level="78" style="--lvl:78%"></div></div>
           </div>
           <div class="skill" data-reveal>
-            <div class="skill-top"><span>Shipping under pressure</span><span class="skill-pct"><span data-count="90">0</span>%</span></div>
+            <div class="skill-top"><span>Delivery under pressure</span><span class="skill-badge">Proven</span></div>
             <div class="rail"><div class="fill" data-level="90" style="--lvl:90%"></div></div>
           </div>
           <p class="skills-note" data-reveal>* Self-taught across every row. The internet was the syllabus.</p>
@@ -289,8 +293,7 @@
           <div class="card-body">
             <div class="card-tags"><span>React</span><span>Vite</span><span>Tailwind</span></div>
             <h3>Lucky Crypter</h3>
-            <p>A web-based crypter for Windows applications — designed by Ghost, managed by Lucky. Clean
-              dashboard, real workflow.</p>
+            <p>A management dashboard for a Windows software service — designed by Ghost, managed by Lucky. Clean UI, shipped live.</p>
             <a class="card-link" href="https://luckycrypter.netlify.app" target="_blank" rel="noopener">View live <span class="arr-ne">&nearr;</span></a>
           </div>
         </article>
@@ -311,8 +314,7 @@
           <div class="card-body">
             <div class="card-tags"><span>Python</span><span>CustomTkinter</span></div>
             <h3>Redline Log Searcher</h3>
-            <p>A desktop tool to search specific data out of Redline Stealer log folders — fast triage for
-              security research.</p>
+            <p>A desktop triage tool for parsing credential log folders during security investigations — built for speed and clarity.</p>
             <a class="card-link" href="https://github.com/nugeta/Ghosts-Log-Checker" target="_blank" rel="noopener">Source on GitHub <span class="arr-ne">&nearr;</span></a>
           </div>
         </article>
@@ -380,7 +382,7 @@
     <div class="sec-inner">
       <div class="sec-head">
         <p class="kicker" data-reveal>05 — Open Source</p>
-        <h2 class="sec-title" data-split data-sr>Localizations</h2>
+        <h2 class="sec-title" data-split data-sr>Contributions</h2>
         <span class="sec-rule"></span>
       </div>
 
@@ -467,6 +469,7 @@
     </div>
   </section>
 </main>
+
 
 <!-- ====== FOOTER ====== -->
 <footer class="site-foot">

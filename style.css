@@ -166,6 +166,21 @@ body.cursor-on,body.cursor-on a,body.cursor-on button{cursor:none}
 .status-dot{width:7px;height:7px;border-radius:50%;background:#5dff9f;animation:ping 2.2s ease-out infinite}
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(93,255,159,.55)}70%{box-shadow:0 0 0 9px rgba(93,255,159,0)}100%{box-shadow:0 0 0 0 rgba(93,255,159,0)}}
 
+/* ---- hamburger toggle (hidden on desktop) ---- */
+.nav-toggle{
+  display:none;flex-direction:column;justify-content:center;gap:5.5px;
+  padding:8px;cursor:pointer;position:relative;z-index:201;
+}
+.nav-toggle span{
+  display:block;width:22px;height:2px;background:var(--cream);border-radius:2px;
+  transition:transform .32s cubic-bezier(.4,0,.2,1),opacity .32s;
+  will-change:transform;
+}
+/* hamburger → X when nav is open */
+.nav-open .nav-toggle span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.nav-open .nav-toggle span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-open .nav-toggle span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
 /* ============================================================
    SHARED SECTION CHROME
    ============================================================ */
@@ -232,6 +247,13 @@ main{position:relative;z-index:4}
 
 .hero-sub{max-width:600px;margin:0 auto;color:var(--muted);font-size:clamp(14.5px,1.5vw,16.5px)}
 .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+
+.hero-nudge{
+  margin-top:14px;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--muted);
+}
+.hero-nudge a{color:var(--muted);transition:color .3s}
+.hero-nudge a:hover{color:var(--accent)}
 
 .hero-meta{
   position:absolute;bottom:34px;font-family:var(--mono);font-size:10px;
@@ -348,7 +370,7 @@ main{position:relative;z-index:4}
 
 .skill{margin-bottom:28px}
 .skill-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:11px;font-size:15px;font-weight:500;gap:14px}
-.skill-pct{font-family:var(--mono);font-size:13px;color:var(--accent);transition:color .6s;flex:none}
+.skill-badge{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);transition:color .6s;flex:none;opacity:.85}
 .rail{height:7px;border-radius:99px;background:rgba(243,237,228,.07);overflow:hidden}
 .fill{
   height:100%;width:0;border-radius:99px;
@@ -416,7 +438,7 @@ main{position:relative;z-index:4}
 .card-body{padding:26px 30px 30px;display:flex;flex-direction:column;flex:1}
 .card-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
 .card-tags span{
-  font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
   color:var(--accent);border:1px solid rgba(168,85,247,.3);
   padding:6px 12px;border-radius:999px;transition:color .6s,border-color .6s;
 }
@@ -532,7 +554,21 @@ main{position:relative;z-index:4}
 }
 
 @media (max-width:900px){
-  .site-nav{display:none}
+  /* mobile nav — full-screen overlay */
+  .site-nav{
+    position:fixed;inset:0;z-index:199;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:36px;
+    background:rgba(7,6,10,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+    opacity:0;pointer-events:none;
+    transition:opacity .35s ease;
+  }
+  .site-nav.is-open{opacity:1;pointer-events:auto}
+  .site-nav a{font-size:20px;letter-spacing:.18em;color:var(--cream)}
+  .site-nav a::after{bottom:-4px}
+
+  .nav-toggle{display:flex}
+  .status{display:none}
+
   .about-grid,.skills-grid{grid-template-columns:1fr}
   .work-grid,.oss-grid,.contact-links{grid-template-columns:1fr}
 
@@ -545,9 +581,9 @@ main{position:relative;z-index:4}
 }
 
 @media (max-width:560px){
-  .hero-title{font-size:clamp(1.5rem,6.4vw,2rem)}
-  .sec-title{font-size:clamp(1.55rem,6vw,2.4rem)}
-  .contact-title{font-size:clamp(1.85rem,7vw,2.7rem)}
+  .hero-title{font-size:clamp(2rem,8vw,2.6rem)}
+  .sec-title{font-size:clamp(1.9rem,7.5vw,2.6rem)}
+  .contact-title{font-size:clamp(2.2rem,8vw,3rem)}
   .stats-grid{grid-template-columns:1fr 1fr;gap:14px}
   .stat{padding:22px 18px}
   .tile-grid{grid-template-columns:repeat(3,1fr)}
@@ -566,9 +602,12 @@ main{position:relative;z-index:4}
 
 @media (prefers-reduced-motion:reduce){
   .marquee-inner,.logo-mark,.cue-line,.status-dot,.noise,.blob{animation:none!important}
+  .nav-toggle span{transition:none}
+  .site-nav{transition:none}
   .preloader{transition:opacity .3s}
   .preloader.done{transform:none;opacity:0}
 }
+
 
 /* no-JS / no-GSAP fallback: everything visible, bars filled */
 .no-anim .fill{width:var(--lvl,0)}

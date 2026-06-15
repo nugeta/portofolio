@@ -82,9 +82,14 @@
       pre.classList.add('done');
       setTimeout(fireIntro, 320);
       setTimeout(function () { if (pre.parentNode) pre.parentNode.removeChild(pre); }, 1400);
+      // move focus to main content for screen readers
+      setTimeout(function () {
+        var main = document.getElementById('main');
+        if (main) main.focus();
+      }, 1100);
     }
     requestAnimationFrame(frame);
-    setTimeout(finish, 6000); // hard fallback, no matter what
+    setTimeout(finish, 3000); // hard fallback, no matter what
   })();
 
   /* ============================================================
@@ -272,6 +277,7 @@
 
     function tick() {
       requestAnimationFrame(tick);
+      if (document.hidden) return; // skip render while tab is in background
       var dt = Math.min(clock.getDelta(), 0.05);
       var time = clock.elapsedTime;
 
@@ -443,7 +449,7 @@
       toast.textContent = msg;
       toast.classList.add('show');
       clearTimeout(tId);
-      tId = setTimeout(function () { toast.classList.remove('show'); }, 2800);
+      tId = setTimeout(function () { toast.classList.remove('show'); }, 4000);
     }
     btn.addEventListener('click', function () {
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -642,7 +648,7 @@
         if (self.isActive) {
           document.documentElement.style.setProperty('--accent', color);
           qsa('.site-nav a').forEach(function (a) { a.removeAttribute('aria-current'); });
-          if (navLink) navLink.setAttribute('aria-current', 'true');
+          if (navLink) navLink.setAttribute('aria-current', 'page');
         }
       }
     });
@@ -697,6 +703,50 @@
     }, { passive: true });
     document.addEventListener('pointerdown', function () { c.classList.add('is-down'); });
     document.addEventListener('pointerup', function () { c.classList.remove('is-down'); });
+  })();
+
+
+  /* ---------- CDN image fallback ---------- */
+  document.addEventListener('error', function (e) {
+    if (e.target.tagName === 'IMG' && e.target.src && e.target.src.indexOf('simpleicons.org') > -1) {
+      e.target.style.opacity = '0';
+    }
+  }, true);
+
+  /* ---------- mobile nav toggle ---------- */
+  (function mobileNav() {
+    var toggle = qs('#navToggle');
+    var nav = qs('#siteNav');
+    if (!toggle || !nav) return;
+
+    function openNav() {
+      nav.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Close navigation');
+      document.body.classList.add('nav-open');
+      var first = qs('a', nav);
+      if (first) first.focus();
+    }
+
+    function closeNav() {
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open navigation');
+      document.body.classList.remove('nav-open');
+      toggle.focus();
+    }
+
+    toggle.addEventListener('click', function () {
+      nav.classList.contains('is-open') ? closeNav() : openNav();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) closeNav();
+    });
+
+    qsa('a', nav).forEach(function (link) {
+      link.addEventListener('click', closeNav);
+    });
   })();
 
   /* ---------- keep everything measured correctly ---------- */
